@@ -3,6 +3,7 @@
 Web APIs
 - motivational quote? zinquotes.io
 - day.js
+- Weather app
 
 CSS Framework
 - Bulma.io
