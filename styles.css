@@ -31,6 +31,7 @@ nav {
 
 html{
     height: 100%;
+    overflow: hidden;
 }
 
 body{
@@ -84,3 +85,17 @@ main{
     height: 100%;
 }
 
+#main-nav{
+    background-color: lightblue;
+    display: flex;
+}
+
+#main-nav button{
+    background-color: darkblue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    flex: 1;
+}
