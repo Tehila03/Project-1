@@ -1,91 +1,95 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Workflow</title>
-        <link rel="stylesheet" href="./styles.css">
-    </head>
-    <body>
-        <Header>
-            <h1>
-                Workflow App
-            </h1>
-            <nav>
-                Time and weather?
-            </nav>
-        </Header>
-        <div id="motivation">
-            Motivational Quote
-        </div>
-        <div id="organizer">
-            <aside id="input">
-                <form id="search-form">
-                    <label for="input-name">Activity</label>
-                    <input type="text" id="input-name"><br>
-                    <label for="input-type">Type</label>
-                    <select id="input-type">
-                        <option value="" disabled selected>Select a type...</option>
-                        <option value="work">Work</option>
-                        <option value="school">School</option>
-                        <option value="exercise">Exercise</option>
-                        <option value="social">Social</option>
-                        <option value="other">Other</option>
-                    </select><br>
-                    <label for="input-start-hour">Start hour</label>
-                    <br>
-                    <select id="input-start-hour">
-                        <option value="" disabled selected>Select a hour...</option>
-                        <option value="hour-1">1</option>
-                        <option value="hour-2">2</option>
-                        <option value="hour-3">3</option>
-                        <option value="hour-4">4</option>
-                        <option value="hour-5">5</option>
-                        <option value="hour-6">6</option>
-                        <option value="hour-7">7</option>
-                        <option value="hour-8">8</option>
-                        <option value="hour-9">9</option>
-                        <option value="hour-10">10</option>
-                        <option value="hour-11">11</option>
-                        <option value="hour-12">12</option>
-                    </select>
-                    <select id="input-start-minute">
-                        <option value="" disabled selected>Select a minute...</option>
-                        <option value="minute-0">0</option>
-                        <option value="minute-1">15</option>
-                        <option value="minute-2">30</option>
-                        <option value="minute-3">45</option>
-                    </select>
-                    <br>
-                    <label for="input-length">Length</label><br>
-                    <select id="input-length">
-                        <option value="" disabled selected>Select a length...</option>
-                        <option value="length-0"></option>
-                        <option value="length-1">1</option>
-                        <option value="length-2">2</option>
-                        <option value="length-3">3</option>
-                        <option value="length-4">4</option>
-                        <option value="length-5">5</option>
-                        <option value="length-6">6</option>
-                        <option value="length-7">7</option>
-                        <option value="length-8">8</option>
-                    </select>
-                    <select id="input-length-minute">
-                        <option value="" disabled selected>Select a minute...</option>
-                        <option value="length-minute-0">0</option>
-                        <option value="length-minute-1">15</option>
-                        <option value="length-minute-2">30</option>
-                        <option value="length-minute-3">45</option>
-                    </select>
-                    <br>
-                    <button id="searchButton">Search</button>
-                </form>
-                <figure id="calender">
 
-                </figure>
+<head>
+    <title>Workflow</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
 
-            </aside>
-            <main id="hourly">
+<body>
+    <Header>
+        <h1>
+            Workflow App
+        </h1>
+        <nav>
+            Time and weather?
+        </nav>
+    </Header>
+    <div id="motivation">
+        Motivational Quote
+    </div>
+    <div id="organizer">
+        <aside id="input">
+            <form id="search-form">
+                <label for="input-name">Activity</label>
+                <input type="text" id="input-name"><br>
+                <label for="input-type">Type</label>
+                <select id="input-type">
+                    <option value="" disabled selected>Select a type...</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="exercise">Exercise</option>
+                    <option value="social">Social</option>
+                    <option value="other">Other</option>
+                </select><br>
+                <label for="input-start-hour">Start hour</label>
+                <br>
+                <select id="input-start-hour">
+                    <option value="" disabled selected>Select a hour...</option>
+                    <option value="hour-1">1</option>
+                    <option value="hour-2">2</option>
+                    <option value="hour-3">3</option>
+                    <option value="hour-4">4</option>
+                    <option value="hour-5">5</option>
+                    <option value="hour-6">6</option>
+                    <option value="hour-7">7</option>
+                    <option value="hour-8">8</option>
+                    <option value="hour-9">9</option>
+                    <option value="hour-10">10</option>
+                    <option value="hour-11">11</option>
+                    <option value="hour-12">12</option>
+                </select>
+                <select id="input-start-minute">
+                    <option value="" disabled selected>Select a minute...</option>
+                    <option value="minute-0">0</option>
+                    <option value="minute-1">15</option>
+                    <option value="minute-2">30</option>
+                    <option value="minute-3">45</option>
+                </select>
+                <br>
+                <label for="input-length">Length</label><br>
+                <select id="input-length">
+                    <option value="" disabled selected>Select a length...</option>
+                    <option value="length-0"></option>
+                    <option value="length-1">1</option>
+                    <option value="length-2">2</option>
+                    <option value="length-3">3</option>
+                    <option value="length-4">4</option>
+                    <option value="length-5">5</option>
+                    <option value="length-6">6</option>
+                    <option value="length-7">7</option>
+                    <option value="length-8">8</option>
+                </select>
+                <select id="input-length-minute">
+                    <option value="" disabled selected>Select a minute...</option>
+                    <option value="length-minute-0">0</option>
+                    <option value="length-minute-1">15</option>
+                    <option value="length-minute-2">30</option>
+                    <option value="length-minute-3">45</option>
+                </select>
+                <br>
+                <button id="searchButton">Search</button>
+            </form>
+            <figure id="calender">
 
-            </main>
-        </div>
-    </body>
+            </figure>
+
+        </aside>
+        <main id="hourly">
+
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
 </html>
