@@ -18,6 +18,17 @@ header {
     padding: 10px;
 }
 
+#logoTitle{
+  display: flex;
+}
+
+#logoTitle #logo {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 60px;
+  width: 60px;
+}
+
 header h1 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 51.5px;
@@ -103,6 +114,7 @@ select, input{
 
 #inputButton{
     background-color: var(--green);
+    color: white;
     width: 100%;
     margin: auto;
     border: none;
@@ -139,6 +151,30 @@ main{
     padding: 10px;
     flex: 1;
     cursor: pointer;
+}
+
+#main-nav #all {
+  background-color: var(--green);
+}
+
+#main-nav #work {
+  background-color: var(--blue);
+}
+
+#main-nav #school {
+  background-color: var(--blue);
+}
+
+#main-nav #exercise {
+  background-color: var(--blue);
+}
+
+#main-nav #social {
+  background-color: var(--blue);
+}
+
+#main-nav #other {
+  background-color: var(--blue);
 }
 
 /*This is for the activities*/
