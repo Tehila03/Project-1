@@ -16,3 +16,6 @@ style:
 - check box for completed events
 - three codes for urgent, non-urgent, upcoming
 - notes/journal
+
+
+https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373
