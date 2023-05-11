@@ -1,3 +1,9 @@
+:root{
+  --blue: #193a52;
+  --grey: #e8eeee;
+  --green: #92c23c;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -6,25 +12,36 @@
 }
 
 header {
-    background-color: darkblue;
-    color: whitesmoke;
+    background-color: var(--blue);
+    color: var(--green);
     position: relative;
     padding: 10px;
 }
 
+header h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 51.5px;
+  padding: 10px;
+  padding-left: 20px;
+}
+
 header #timeWeather {
+    color: white;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 32.75px;
+    top: 32.75px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+
 }
 
 
 #motivation{
-    background-color: lightblue;
+    background-color: var(--grey);
     padding: 20px;
     padding-bottom: 0;
     height: 212px;
-    color: darkblue;
+    color: var(--blue);
     font-size: 20px;
     line-height: 150%;
 }
@@ -54,17 +71,17 @@ body{
 
 aside{
     flex:20%;
-    color: darkcyan;
-    background-color: lightblue;
+    color: var(--blue);
+    background-color: var(--grey);
 }
 
 form{
     margin: 10px;
-    margin-top: 55.5px;
+    margin-top: 20px;
 }
 
 select, input{
-    background-color: whitesmoke;
+    background-color: #fff;
     width: 100%;
     border: none;
     border-radius: 5px;
@@ -85,7 +102,7 @@ select, input{
 }
 
 #inputButton{
-    background-color: aquamarine;
+    background-color: var(--green);
     width: 100%;
     margin: auto;
     border: none;
@@ -98,20 +115,20 @@ select, input{
 
 main{
     flex:80%;
-    background-color: lightblue;
+    background-color: var(--grey);
     height: 100%;
 }
 
 #main-nav{
     display: flex;
     padding-bottom: 0px;
-    background-color: lightblue;
+    background-color: var(--grey);
     padding-left: 10px;
 }
 
 #main-nav button{
-    background-color: darkblue;
-    color: whitesmoke;
+    background-color: var(--blue);
+    color: white;
     border: none;
     border-radius: 5px;
     border-bottom-left-radius: 0px;
@@ -128,11 +145,12 @@ main{
 
 #workflow {
     height: 100%;
-    background-color: whitesmoke;
+    background-color: #d9dddd;
     border-top-left-radius: 15px;
     padding: 20px;
     padding-top: 42.5px;
     display: flex;
+    overflow: auto;
 }
 
 #timeline{
@@ -143,6 +161,7 @@ main{
 }
 
 #timeline li {
+    color: var(--blue);
     padding-left: 30px;
     padding-bottom: 97.5px;
     text-align: right;
@@ -150,7 +169,7 @@ main{
 
 #timeslots{
     height: 100%;
-    background-color: whitesmoke;
+    background: none;
     border-top-left-radius: 15px;
     padding: 20px;
     padding-left: 0px;
@@ -159,7 +178,8 @@ main{
 }
 
 .activity {
-    background-color: #1abc9c;
+    color: white;
+    background-color: var(--blue);
     border-radius: 5px;
     height: 100px;
     padding: 10px;
@@ -168,7 +188,7 @@ main{
 }
 
 .title {
-    flex: 8;
+    flex: 6;
 }
 
 .title p {
@@ -179,14 +199,14 @@ main{
     border: none;
     cursor: pointer;
     border-radius: 40px;
-    background-color: darkblue;
+    background-color: var(--blue);
     width: 80px;
 }
 
 .edit img {
     height: 40px;
     width: 40px;
-    color: whitesmoke;
+    color: white;
 }
 
 .container {
@@ -219,20 +239,20 @@ main{
   left: 0;
   height: 80px;
   width: 80px;
-  background-color: #eee;
+  background-color: white;
   border-radius: 40px;
 }
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
     border-radius: 40px;
-  background-color: #ccc;
+  background-color: white;
 }
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
     border-radius: 40px;
-  background-color: #2196F3;
+  background-color: var(--blue);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -253,7 +273,7 @@ main{
   top: 5px;
   width: 20px;
   height: 50px;
-  border: solid white;
+  border: solid var(--green);
   border-width: 0 9px 9px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -271,12 +291,12 @@ body {font-family: Verdana, sans-serif;}
 .month {
   padding: 30px 25px;
   width: 100%;
-  background: #1abc9c;
+  background: var(--blue);
   text-align: center;
 }
 
 .month li, .month span {
-    background-color: #1abc9c;
+    background-color: var(--blue);
 }
 
 .month ul {
@@ -306,7 +326,7 @@ body {font-family: Verdana, sans-serif;}
 .weekdays {
   margin: 0;
   padding: 10px 0;
-  background-color: #ddd;
+  background-color: #d9dddd;
   display: flex;
 }
 
@@ -340,6 +360,6 @@ body {font-family: Verdana, sans-serif;}
 
 .days li .active {
   padding: 5px;
-  background: #1abc9c;
+  background: var(--blue);
   color: white !important
 }
