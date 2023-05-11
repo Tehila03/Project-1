@@ -1,283 +1,298 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Mindful Mapping</title>
-        <link rel="stylesheet" href="./styles.css">
-        <link rel="icon" href="./Logo.png" type="image/icon type">
-    </head>
-    <body>
-        <header>
-            <div id="logoTitle">
-                <img id="logo" src="./Logo.png">
-                <h1>Mindful Mapping</h1>
+
+<head>
+    <title>Mindful Mapping</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" href="assets/images/Logo.png" type="image/icon type">
+</head>
+
+<body>
+    <header>
+        <div id="logoTitle">
+            <img id="logo" src="assets/images/Logo.png">
+            <h1>Mindful Mapping</h1>
+        </div>
+        <div id="timeWeather">
+            3:15 Partly Cloudy
+        </div>
+    </header>
+    <div id="organizer">
+        <aside id="input">
+            <form id="search-form">
+                <label for="input-name">Activity</label>
+                <input type="text" id="input-name"><br>
+                <label for="input-type">Type</label>
+                <select id="input-type">
+                    <option value="" disabled selected>Select a type...</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="exercise">Exercise</option>
+                    <option value="social">Social</option>
+                    <option value="other">Other</option>
+                </select><br>
+                <label for="input-start-hour">Start time</label>
+                <br>
+                <select id="input-start-hour">
+                    <option value="" disabled selected>Hours</option>
+                    <option value="hour-12">12</option>
+                    <option value="hour-1">1</option>
+                    <option value="hour-2">2</option>
+                    <option value="hour-3">3</option>
+                    <option value="hour-4">4</option>
+                    <option value="hour-5">5</option>
+                    <option value="hour-6">6</option>
+                    <option value="hour-7">7</option>
+                    <option value="hour-8">8</option>
+                    <option value="hour-9">9</option>
+                    <option value="hour-10">10</option>
+                    <option value="hour-11">11</option>
+                </select>
+                <select id="input-start-minute">
+                    <option value="" disabled selected>Minutes</option>
+                    <option value="minute-0">0</option>
+                    <option value="minute-1">15</option>
+                    <option value="minute-2">30</option>
+                    <option value="minute-3">45</option>
+                </select>
+                <select id="input-start-ampm">
+                    <option value="" disabled selected>am/pm</option>
+                    <option value="am">am</option>
+                    <option value="pm">pm</option>
+                </select>
+                <br>
+                <label for="input-length">Length</label><br>
+                <select id="input-length">
+                    <option value="" disabled selected>Hours</option>
+                    <option value="length-0">0</option>
+                    <option value="length-1">1</option>
+                    <option value="length-2">2</option>
+                    <option value="length-3">3</option>
+                    <option value="length-4">4</option>
+                    <option value="length-5">5</option>
+                    <option value="length-6">6</option>
+                    <option value="length-7">7</option>
+                    <option value="length-8">8</option>
+                </select>
+                <select id="input-length-minute">
+                    <option value="" disabled selected>Minutes</option>
+                    <option value="length-minute-0">0</option>
+                    <option value="length-minute-1">15</option>
+                    <option value="length-minute-2">30</option>
+                    <option value="length-minute-3">45</option>
+                </select>
+                <br>
+                <button id="inputButton">Submit</button>
+            </form>
+            <div id="motivation">
+                <div id="quote"></div>
+                <div id="author"></div>
             </div>
-            <div id="timeWeather">
-                3:15 Partly Cloudy
-            </div>
-        </header>
-        <div id="organizer">
-            <aside id="input">
-                <form id="search-form">
-                    <label for="input-name">Activity</label>
-                    <input type="text" id="input-name"><br>
-                    <label for="input-type">Type</label>
-                    <select id="input-type">
-                        <option value="" disabled selected>Select a type...</option>
-                        <option value="work">Work</option>
-                        <option value="school">School</option>
-                        <option value="exercise">Exercise</option>
-                        <option value="social">Social</option>
-                        <option value="other">Other</option>
-                    </select><br>
-                    <label for="input-start-hour">Start time</label>
-                    <br>
-                    <select id="input-start-hour">
-                        <option value="" disabled selected>Hours</option>
-                        <option value="hour-12">12</option>
-                        <option value="hour-1">1</option>
-                        <option value="hour-2">2</option>
-                        <option value="hour-3">3</option>
-                        <option value="hour-4">4</option>
-                        <option value="hour-5">5</option>
-                        <option value="hour-6">6</option>
-                        <option value="hour-7">7</option>
-                        <option value="hour-8">8</option>
-                        <option value="hour-9">9</option>
-                        <option value="hour-10">10</option>
-                        <option value="hour-11">11</option>
-                    </select>
-                    <select id="input-start-minute">
-                        <option value="" disabled selected>Minutes</option>
-                        <option value="minute-0">0</option>
-                        <option value="minute-1">15</option>
-                        <option value="minute-2">30</option>
-                        <option value="minute-3">45</option>
-                    </select>
-                    <select id="input-start-ampm">
-                        <option value="" disabled selected>am/pm</option>
-                        <option value="am">am</option>
-                        <option value="pm">pm</option>
-                    </select>
-                    <br>
-                    <label for="input-length">Length</label><br>
-                    <select id="input-length">
-                        <option value="" disabled selected>Hours</option>
-                        <option value="length-0">0</option>
-                        <option value="length-1">1</option>
-                        <option value="length-2">2</option>
-                        <option value="length-3">3</option>
-                        <option value="length-4">4</option>
-                        <option value="length-5">5</option>
-                        <option value="length-6">6</option>
-                        <option value="length-7">7</option>
-                        <option value="length-8">8</option>
-                    </select>
-                    <select id="input-length-minute">
-                        <option value="" disabled selected>Minutes</option>
-                        <option value="length-minute-0">0</option>
-                        <option value="length-minute-1">15</option>
-                        <option value="length-minute-2">30</option>
-                        <option value="length-minute-3">45</option>
-                    </select>
-                    <br>
-                    <button id="inputButton">Submit</button>
-                </form>
-                <div id="motivation">
-                    <div id="quote"></div>
-                    <div id="author"></div>
-                </div>
-                <div id="calender">
-                    <div class="month">      
-                        <ul>
-                          <li class="prev">&#10094;</li>
-                          <li class="next">&#10095;</li>
-                          <li>
+            <div id="calender">
+                <div class="month">
+                    <ul>
+                        <li class="prev">&#10094;</li>
+                        <li class="next">&#10095;</li>
+                        <li>
                             May<br>
                             <span style="font-size:18px">2023</span>
-                          </li>
-                        </ul>
-                      </div>
-                      
-                      <ul class="weekdays">
-                        <li>Su</li>
-                        <li>Mo</li>
-                        <li>Tu</li>
-                        <li>We</li>
-                        <li>Th</li>
-                        <li>Fr</li>
-                        <li>Sa</li>
-                      </ul>
-                      
-                      <ul class="days">
-                        <li></li>  
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li><span class="active">11</span></li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li>18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li>29</li>
-                        <li>30</li>
-                        <li>31</li>
-                      </ul>
+                        </li>
+                    </ul>
                 </div>
-            </aside>
-            <main id="hourly">
-                <nav id="main-nav">
-                    <button id="all">
-                        All
-                    </button>
-                    <button id="work">
-                        Work
-                    </button>
-                    <button id="school">
-                        School
-                    </button>
-                    <button id="exercise">
-                        Exercise
-                    </button>
-                    <button id="social">
-                        Social
-                    </button>
-                    <button id="other">
-                        Other
-                    </button>
-                </nav>
-                <div id="workflow">
-                    <div id="timeline">
-                        <li>12am</li>
-                        <li>1am</li>
-                        <li>2am</li>
-                        <li>3am</li>
-                        <li>4am</li>
-                        <li>5am</li>
-                        <li>6am</li>
-                        <li>7am</li>
-                        <li>8am</li>
-                        <li>9am</li>
-                        <li>10am</li>
-                        <li>11am</li>
-                        <li>12pm</li>
-                        <li>1pm</li>
-                        <li>2pm</li>
-                        <li>3pm</li>
-                        <li>4pm</li>
-                        <li>5pm</li>
-                        <li>6pm</li>
-                        <li>7pm</li>
-                        <li>8pm</li>
-                        <li>9pm</li>
-                        <li>10pm</li>
-                        <li>11pm</li>
-                        <li></li>
+
+                <ul class="weekdays">
+                    <li>Su</li>
+                    <li>Mo</li>
+                    <li>Tu</li>
+                    <li>We</li>
+                    <li>Th</li>
+                    <li>Fr</li>
+                    <li>Sa</li>
+                </ul>
+
+                <ul class="days">
+                    <li></li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li><span class="active">11</span></li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li>25</li>
+                    <li>26</li>
+                    <li>27</li>
+                    <li>28</li>
+                    <li>29</li>
+                    <li>30</li>
+                    <li>31</li>
+                </ul>
+            </div>
+        </aside>
+        <main id="hourly">
+            <nav id="main-nav">
+                <button id="all">
+                    All
+                </button>
+                <button id="work">
+                    Work
+                </button>
+                <button id="school">
+                    School
+                </button>
+                <button id="exercise">
+                    Exercise
+                </button>
+                <button id="social">
+                    Social
+                </button>
+                <button id="other">
+                    Other
+                </button>
+            </nav>
+            <div id="workflow">
+                <div id="timeline">
+                    <li>12am</li>
+                    <li>1am</li>
+                    <li>2am</li>
+                    <li>3am</li>
+                    <li>4am</li>
+                    <li>5am</li>
+                    <li>6am</li>
+                    <li>7am</li>
+                    <li>8am</li>
+                    <li>9am</li>
+                    <li>10am</li>
+                    <li>11am</li>
+                    <li>12pm</li>
+                    <li>1pm</li>
+                    <li>2pm</li>
+                    <li>3pm</li>
+                    <li>4pm</li>
+                    <li>5pm</li>
+                    <li>6pm</li>
+                    <li>7pm</li>
+                    <li>8pm</li>
+                    <li>9pm</li>
+                    <li>10pm</li>
+                    <li>11pm</li>
+                    <li></li>
+                </div>
+                <div id="timeslots">
+                    <div class="activity">
+                        <div class="title">
+                            <h2>Shift at White House</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris.
+                                Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur
+                                faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
+                        </div>
+                        <button class="edit">
+                            <img src="assets/images/edit.png">
+                        </button>
+                        <label class="container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
                     </div>
-                    <div id="timeslots">
-                        <div class="activity">
-                            <div class="title">
-                                <h2>Shift at White House</h2>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris. Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
-                            </div>
-                            <button class="edit">
-                                <img src="./edit.png">
-                            </button>
-                            <label class="container">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
+                    <div class="activity">
+                        <div class="title">
+                            <h2>Shift at White House</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris.
+                                Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur
+                                faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
                         </div>
-                        <div class="activity">
-                            <div class="title">
-                                <h2>Shift at White House</h2>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris. Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
-                            </div>
-                            <button class="edit">
-                                <img src="./edit.png">
-                            </button>
-                            <label class="container">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
+                        <button class="edit">
+                            <img src="assets/images/edit.png">
+                        </button>
+                        <label class="container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="activity">
+                        <div class="title">
+                            <h2>Shift at White House</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris.
+                                Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur
+                                faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
                         </div>
-                        <div class="activity">
-                            <div class="title">
-                                <h2>Shift at White House</h2>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris. Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
-                            </div>
-                            <button class="edit">
-                                <img src="./edit.png">
-                            </button>
-                            <label class="container">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
+                        <button class="edit">
+                            <img src="assets/images/edit.png">
+                        </button>
+                        <label class="container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="activity">
+                        <div class="title">
+                            <h2>Shift at White House</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris.
+                                Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur
+                                faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
                         </div>
-                        <div class="activity">
-                            <div class="title">
-                                <h2>Shift at White House</h2>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris. Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
-                            </div>
-                            <button class="edit">
-                                <img src="./edit.png">
-                            </button>
-                            <label class="container">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
+                        <button class="edit">
+                            <img src="assets/images/edit.png">
+                        </button>
+                        <label class="container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="activity">
+                        <div class="title">
+                            <h2>Shift at White House</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris.
+                                Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur
+                                faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
                         </div>
-                        <div class="activity">
-                            <div class="title">
-                                <h2>Shift at White House</h2>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris. Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
-                            </div>
-                            <button class="edit">
-                                <img src="./edit.png">
-                            </button>
-                            <label class="container">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
+                        <button class="edit">
+                            <img src="assets/images/edit.png">
+                        </button>
+                        <label class="container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="activity">
+                        <div class="title">
+                            <h2>Shift at White House</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris.
+                                Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur
+                                faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
                         </div>
-                        <div class="activity">
-                            <div class="title">
-                                <h2>Shift at White House</h2>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris. Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
-                            </div>
-                            <button class="edit">
-                                <img src="./edit.png">
-                            </button>
-                            <label class="container">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
+                        <button class="edit">
+                            <img src="assets/images/edit.png">
+                        </button>
+                        <label class="container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
                     </div>
                 </div>
-            </main>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-        <script src="./script.js"></script>
-    </body>
+            </div>
+        </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
 </html>
