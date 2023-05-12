@@ -30,3 +30,16 @@ if (newDate != dayjs().date()) {
 
 
 getApi("https://type.fit/api/quotes");
+
+var now = dayjs().format("h:mm a")
+
+$("#timeWeather").text(now);
+
+function clock(){
+  timeInterval = setInterval(function() {
+    now = dayjs().format("h:mm a")
+    $("#timeWeather").text(now)
+    },1000);
+}
+
+clock();
