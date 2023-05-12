@@ -3,28 +3,30 @@ function getApi(requestUrl) {
     .then(function (response) {
       return response.json();
     }).then(function (data) {
-      random = getRandomValueFromArray(data);
-      $("#quote").text(random.text);
-      console.log(random)
-      $("#author").text("- " + random.author);
-      if (random.author === null) {
+      $("#quote").text(data[currentQuote].text);
+      $("#author").text("- " + data[currentQuote].author);
+      if (data[currentQuote].author === null) {
         $("#author").text("- Unknown");
       }
     })
 }
-
-
-function getRandomNumber(min, max) {
-  var randomNumber = Math.random()
-  var randomNumberUpToMax = randomNumber * max;
-  var randomNumberInRange = min + randomNumberUpToMax;
-
-  return Math.floor(randomNumberInRange);
+var newDate = localStorage.getItem("newDate");
+  if (newDate === null ){
+  newDate = dayjs().date();
 }
 
-function getRandomValueFromArray(array) {
-  var randomArrayPosition = getRandomNumber(0, array.length);
-  return array[randomArrayPosition];
+var currentQuote = localStorage.getItem("currentQuote");
+
+if (currentQuote === null ){
+    currentQuote = 0;
 }
+
+if (newDate != dayjs().date()) {
+  newDate = dayjs().date();
+  currentQuote++;
+  localStorage.setItem("newDate", newDate);
+  localStorage.setItem("currentQuote", currentQuote);
+}
+
 
 getApi("https://type.fit/api/quotes");
