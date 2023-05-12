@@ -51,7 +51,8 @@ header #timeWeather {
     background-color: var(--grey);
     padding: 20px;
     padding-bottom: 0;
-    height: 212px;
+    height: auto;
+    margin-bottom: 25px;
     color: var(--blue);
     font-size: 20px;
     line-height: 150%;
