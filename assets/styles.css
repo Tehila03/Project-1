@@ -51,10 +51,11 @@ header #timeWeather {
     background-color: var(--grey);
     padding: 20px;
     padding-bottom: 0;
-    height: 212px;
+    height: auto;
     color: var(--blue);
     font-size: 20px;
     line-height: 150%;
+    margin-bottom: 25px;
 }
 
 #author{
@@ -121,6 +122,11 @@ select, input{
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
+}
+
+#spacer{
+  background: none;
+  height: 225px;
 }
 
 /*This is for the main page*/
