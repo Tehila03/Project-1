@@ -209,23 +209,7 @@ main{
     background-color: #d9dddd;
     border-top-left-radius: 15px;
     padding: 20px;
-    padding-top: 42.5px;
-    display: flex;
     overflow: auto;
-}
-
-#timeline{
-    height: 100%;
-    flex: 1;
-    list-style-type: none;
-    font-size: 20px;
-}
-
-#timeline li {
-    color: var(--blue);
-    padding-left: 30px;
-    padding-bottom: 97.5px;
-    text-align: right;
 }
 
 #timeslots{
@@ -235,7 +219,6 @@ main{
     padding: 20px;
     padding-left: 0px;
     padding-top: 0px;
-    flex: 15;
 }
 
 .activity {
