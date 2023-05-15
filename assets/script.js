@@ -51,7 +51,8 @@ updateCoordinate(function (returnValue) {
   console.log(returnValue);
   var geoLocationLat=returnValue.latitude;
       var geoLocationLon=returnValue.longitude;
-      var requestWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${geoLocationLat}&lon=${geoLocationLon}&exclude=hourly,daily&units=imperial&appid=71ab6dae80d4e4ec7fa98ea5618e8732`;
+      var key='2c5bcf8987116e3df22f7b64c6a46515';
+      var requestWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${geoLocationLat}&lon=${geoLocationLon}&exclude=hourly,daily&units=imperial&appid=${key}`;
       setWeatherIcon(requestWeatherUrl)
     });
 
@@ -78,5 +79,3 @@ function setWeatherIcon(requestWeatherUrl){
                 $("#weatherIcon").prepend(img);
             }
       )};
-    
-    
