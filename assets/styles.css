@@ -18,8 +18,26 @@ header {
     padding: 10px;
 }
 
-#logoTitle{
+#headTop{
   display: flex;
+}
+
+#logoTitle {
+  flex: 2;
+  display: flex;
+}
+
+#weatherIcon{
+  flex: 1;
+}
+
+#weatherIcon img {
+  height: 60px;
+  width: 60px;
+  float: right;
+  position: absolute;
+  right: 160px;
+  top: 20px;
 }
 
 #logoTitle #logo {
@@ -43,7 +61,6 @@ header #timeWeather {
     top: 32.75px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 30px;
-
 }
 
 
@@ -52,6 +69,7 @@ header #timeWeather {
     padding: 20px;
     padding-bottom: 0;
     height: auto;
+    margin-bottom: 25px;
     color: var(--blue);
     font-size: 20px;
     line-height: 150%;
@@ -85,6 +103,7 @@ aside{
     flex:20%;
     color: var(--blue);
     background-color: var(--grey);
+    overflow: auto;
 }
 
 form{
