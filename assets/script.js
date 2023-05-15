@@ -1,5 +1,8 @@
-var sortButtons =[$('#all'),$('#work'),$('#school'),$('#exercise'),$('#social'),$('#other')]
-var sortBar = $('#main-nav')
+var sortButtons =[$('#all'),$('#work'),$('#school'),$('#exercise'),$('#social'),$('#other')];
+var sortBar = $('#main-nav');
+var inputButton = $('#inputButton');
+var activities = $("#timeslots");
+
 function getApi(requestUrl) {
   fetch(requestUrl)
     .then(function (response) {
@@ -90,3 +93,40 @@ function changeTab() {
 }
 
 sortBar.on('click','button', changeTab);
+
+inputButton.on('click', function (event){
+  event.preventDefault();
+
+  activity = $("#input-name").val();
+  type = $("#input-type").val();
+  start = $("#input-start-hour").val() +":"+ $("#input-start-minute").val();
+  amPm = $("#input-start-ampm").val();
+
+  var newInput = $("<div>", { class:"activity", type});
+  var newText = $("<div>", { class:"title"});
+  var newTitle = $("<h2>");
+  var newDesc = $("<p>");
+  var buttonEdit = $("<button>", {class:"edit"});
+  var buttonEditImg = $("<img>", {src:"assets/images/edit.png"});
+  var newLabel = $("<label>", {class:"container"});
+  var newCheck = $("<input>", {type:"checkbox"});
+  var newSpan = $("<span>", {class:"checkmark"});
+
+  newTitle.text(activity)
+  newDesc.text("Add extra info with the edit function")
+
+  
+  newLabel.append(newCheck);
+  newLabel.append(newSpan);
+
+  buttonEdit.append(buttonEditImg);
+
+  newText.append(newTitle);
+  newText.append(newDesc);
+
+  newInput.append(newText);
+  newInput.append(buttonEdit);
+  newInput.append(newLabel);
+
+  activities.prepend(newInput);
+});
