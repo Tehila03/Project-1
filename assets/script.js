@@ -1,3 +1,5 @@
+var sortButtons =[$('#all'),$('#work'),$('#school'),$('#exercise'),$('#social'),$('#other')]
+var sortBar = $('#main-nav')
 function getApi(requestUrl) {
   fetch(requestUrl)
     .then(function (response) {
@@ -79,3 +81,12 @@ function setWeatherIcon(requestWeatherUrl){
                 $("#weatherIcon").prepend(img);
             }
       )};
+
+function changeTab() {
+  for (var i = 0; i<sortButtons.length; i++){
+    sortButtons[i].css("background-color","var(--blue)")
+  }
+  $(this).css("background-color","var(--green)")
+}
+
+sortBar.on('click','button', changeTab);
