@@ -89,10 +89,40 @@ function changeTab() {
   for (var i = 0; i<sortButtons.length; i++){
     sortButtons[i].css("background-color","var(--blue)")
   }
-  $(this).css("background-color","var(--green)")
+  $(this).css("background-color","var(--green)");
 }
 
-sortBar.on('click','button', changeTab);
+function updateList(){
+  $(".activity").css("display","none");
+
+  var buttonValues = ["all","work","school","exercise","social","other"]
+  var type = $(this).val();
+
+  console.log(type)
+  console.log(buttonValues[1])
+
+  if (type === buttonValues[0]){
+    $(".activity").css("display","flex");
+  }
+  if (type === buttonValues[1]){
+    console.log("works")
+    $(".Work").css("display","flex");
+  }
+  if (type === buttonValues[2]){
+    $(".School").css("display","flex");
+  }
+  if (type === buttonValues[3]){
+    $(".Exercise").css("display","flex");
+  }
+  if (type === buttonValues[4]){
+    $(".Social").css("display","flex");
+  }
+  if (type === buttonValues[5]){
+    $(".Other").css("display","flex");
+  }
+}
+
+sortBar.on('click','button', changeTab, updateList);
 
 inputButton.on('click', function (event){
   event.preventDefault();
@@ -108,7 +138,7 @@ inputButton.on('click', function (event){
   $("#input-start-minute").val("");
   $("#input-start-ampm").val("");
 
-  var newInput = $("<div>", { class:"activity", type});
+  var newInput = $("<div>", { class: "activity "+type});
   var newTime = $("<div>", {class:"timeLength"});
   var newTimeStart = $("<p>", {class:"start"});
   var newTimeEnd = $("<p>", {class:"end"});
