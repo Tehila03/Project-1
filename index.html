@@ -26,17 +26,17 @@
                 <label for="input-type">Type</label>
                 <select id="input-type">
                     <option value="" disabled selected>Select a type...</option>
-                    <option value="work">Work</option>
-                    <option value="school">School</option>
-                    <option value="exercise">Exercise</option>
-                    <option value="social">Social</option>
-                    <option value="other">Other</option>
+                    <option value="Work">Work</option>
+                    <option value="School">School</option>
+                    <option value="Exercise">Exercise</option>
+                    <option value="Social">Social</option>
+                    <option value="Other">Other</option>
                 </select><br>
                 <label for="input-start-hour">Start time</label>
                 <br>
                 <select id="input-start-hour">
                     <option value="" disabled selected>Hours</option>
-                    <option value="0">12</option>
+                    <option value="12">12</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -61,11 +61,11 @@
                     <option value="am">am</option>
                     <option value="pm">pm</option>
                 </select>
+                <label for="input-end-hour">End time</label>
                 <br>
-                <label for="input-length">Length</label><br>
-                <select id="input-length">
+                <select id="input-end-hour">
                     <option value="" disabled selected>Hours</option>
-                    <option value="0">0</option>
+                    <option value="12">12</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -74,13 +74,21 @@
                     <option value="6">6</option>
                     <option value="7">7</option>
                     <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
                 </select>
-                <select id="input-length-minute">
+                <select id="input-end-minute">
                     <option value="" disabled selected>Minutes</option>
-                    <option value="0">0</option>
-                    <option value="1">15</option>
-                    <option value="2">30</option>
-                    <option value="3">45</option>
+                    <option value="00">00</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                </select>
+                <select id="input-end-ampm">
+                    <option value="" disabled selected>am/pm</option>
+                    <option value="am">am</option>
+                    <option value="pm">pm</option>
                 </select>
                 <br>
                 <button id="inputButton">Submit</button>
@@ -171,6 +179,25 @@
             </nav>
             <div id="workflow">
                 <div id="timeslots">
+                    <div class="activity">
+                        <div class="timeLength">
+                            <p class="start">9:30am</p>
+                            <p class="end">12:00pm</p>
+                        </div>
+                        <div class="title">
+                            <h2>Shift at White House</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed mi mauris.
+                                Phasellus turpis metus, vestibulum sed neque et, volutpat luctus diam. Curabitur
+                                faucibus tellus eget erat aliquet, a venenatis lorem lobortis.</p>
+                        </div>
+                        <button class="edit">
+                            <img src="assets/images/edit.png">
+                        </button>
+                        <label class="container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
                 </div>
             </div>
         </main>

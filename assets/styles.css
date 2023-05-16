@@ -120,15 +120,11 @@ select, input{
     margin-bottom: 10px;
 }
 
-#input-length, #input-length-minute {
-    width: 49.1%;
-}
-
-#input-start-hour, #input-start-minute {
+#input-start-hour, #input-start-minute, #input-end-hour, #input-end-minute {
     width: 35%;
 }
 
-#input-start-ampm {
+#input-start-ampm, #input-end-ampm {
     width: 26%;
 }
 
@@ -231,8 +227,26 @@ main{
     display: flex;
 }
 
+.timeLength{
+  position: relative;
+  flex: 1;
+}
+
+.start{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.end{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+
 .title {
-    flex: 6;
+    flex: 10;
 }
 
 .title p {
@@ -250,7 +264,6 @@ main{
 .edit img {
     height: 40px;
     width: 40px;
-    color: white;
 }
 
 .container {

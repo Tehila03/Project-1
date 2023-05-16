@@ -99,10 +99,19 @@ inputButton.on('click', function (event){
 
   activity = $("#input-name").val();
   type = $("#input-type").val();
-  start = $("#input-start-hour").val() +":"+ $("#input-start-minute").val();
-  amPm = $("#input-start-ampm").val();
+  start = $("#input-start-hour").val() +":"+ $("#input-start-minute").val() +" "+ $("#input-start-ampm").val();
+  end = $("#input-end-hour").val() +":"+ $("#input-end-minute").val() +" "+ $("#input-end-ampm").val();
+
+  $("#input-name").val("");
+  $("#input-type").val("");
+  $("#input-start-hour").val("")
+  $("#input-start-minute").val("");
+  $("#input-start-ampm").val("");
 
   var newInput = $("<div>", { class:"activity", type});
+  var newTime = $("<div>", {class:"timeLength"});
+  var newTimeStart = $("<p>", {class:"start"});
+  var newTimeEnd = $("<p>", {class:"end"});
   var newText = $("<div>", { class:"title"});
   var newTitle = $("<h2>");
   var newDesc = $("<p>");
@@ -112,7 +121,13 @@ inputButton.on('click', function (event){
   var newCheck = $("<input>", {type:"checkbox"});
   var newSpan = $("<span>", {class:"checkmark"});
 
-  newTitle.text(activity)
+  newTimeStart.text(start);
+  newTimeEnd.text(end);
+
+  newTime.append(newTimeStart);
+  newTime.append(newTimeEnd);
+
+  newTitle.text(activity +" - "+ type);
   newDesc.text("Add extra info with the edit function")
 
   
@@ -124,6 +139,7 @@ inputButton.on('click', function (event){
   newText.append(newTitle);
   newText.append(newDesc);
 
+  newInput.append(newTime);
   newInput.append(newText);
   newInput.append(buttonEdit);
   newInput.append(newLabel);
