@@ -122,7 +122,8 @@ function updateList(){
   }
 }
 
-sortBar.on('click','button', changeTab, updateList);
+sortBar.on('click','button', changeTab);
+sortBar.on('click','button', updateList);
 
 inputButton.on('click', function (event){
   event.preventDefault();
