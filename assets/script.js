@@ -175,5 +175,5 @@ inputButton.on('click', function (event){
   newInput.append(buttonEdit);
   newInput.append(newLabel);
 
-  activities.prepend(newInput);
+  activities.append(newInput);
 });
