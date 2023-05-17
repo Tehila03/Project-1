@@ -205,7 +205,7 @@ main{
     background-color: #d9dddd;
     border-top-left-radius: 15px;
     padding: 20px;
-    overflow: auto;
+    overflow: scroll;
 }
 
 #timeslots{
@@ -230,6 +230,10 @@ main{
 .timeLength{
   position: relative;
   flex: 1;
+}
+
+.spacer{
+  height: 170px;
 }
 
 .start{
