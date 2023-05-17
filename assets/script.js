@@ -138,6 +138,9 @@ inputButton.on('click', function (event){
   $("#input-start-hour").val("")
   $("#input-start-minute").val("");
   $("#input-start-ampm").val("");
+  $("#input-end-hour").val("")
+  $("#input-end-minute").val("");
+  $("#input-end-ampm").val("");
 
   var newInput = $("<div>", { class: "activity "+type});
   var newTime = $("<div>", {class:"timeLength"});
@@ -175,5 +178,5 @@ inputButton.on('click', function (event){
   newInput.append(buttonEdit);
   newInput.append(newLabel);
 
-  activities.append(newInput);
+  activities.prepend(newInput);
 });
