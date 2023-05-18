@@ -26,13 +26,18 @@ if (currentQuote === null ){
     currentQuote = 0;
 }
 
-if (newDate != dayjs().date()) {
+if (newDate != dayjs().date()+1) {
   newDate = dayjs().date();
   currentQuote++;
   localStorage.setItem("newDate", newDate);
   localStorage.setItem("currentQuote", currentQuote);
 }
 
+
+if (currentQuote === 0) {
+  localStorage.setItem("newDate", newDate);
+  localStorage.setItem("currentQuote", currentQuote);
+}
 
 getApi("https://type.fit/api/quotes");
 
