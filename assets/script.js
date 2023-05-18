@@ -256,7 +256,7 @@ inputButton.on('click', function (event){
   newTime.append(newTimeEnd);
 
   newTitle.text(activity +" - "+ type);
-  newDesc.text("Add extra info with the edit function")
+  newDesc.text("")
 
   
   newLabel.append(newCheck);
