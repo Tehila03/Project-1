@@ -34,6 +34,11 @@ if (newDate != dayjs().date()) {
 }
 
 
+if (currentQuote === 0) {
+  localStorage.setItem("newDate", newDate);
+  localStorage.setItem("currentQuote", currentQuote);
+}
+
 getApi("https://type.fit/api/quotes");
 
 var now = dayjs().format("h:mm a")
