@@ -2,6 +2,13 @@ var sortButtons =[$('#all'),$('#work'),$('#school'),$('#exercise'),$('#social'),
 var sortBar = $('#main-nav');
 var inputButton = $('#inputButton');
 var activities = $("#timeslots");
+var editScreen = $("#editScreen");
+var closeEditButton = $("#closeEdit");
+var deleteButton = $("#deleteActivity");
+var editName = $("#edit-input-name");
+var editDescription = $("#edit-input-description");
+var editType = $("#edit-input-type");
+var editSubmit = $("#editSubmit");
 
 function getApi(requestUrl) {
   fetch(requestUrl)
@@ -49,7 +56,7 @@ function clock(){
   timeInterval = setInterval(function() {
     now = dayjs().format("h:mm a")
     $("#timeWeather").text(now)
-    },10000);
+    },1000);
 }
 
 clock();
@@ -127,8 +134,59 @@ function updateList(){
   }
 }
 
+function openEdit(){
+  editScreen.css("display","block");
+  currentActivity = $(this).parent();
+  currentTitle = $(this).parent().children(".activityText").children(".activityTitle");
+  currentDescription = $(this).parent().children(".activityText").children(".activityDescription");
+}
+function closeEdit(){
+  editScreen.css("display","none")
+}
+
+var currentActivity = "";
+var currentTitle = "";
+var currentDescription = "";
+
+function submitEdit(event){
+  event.preventDefault();
+  
+  if(editName.val()==""){
+    editName.val(currentTitle.text());
+  } else {
+    currentTitle.text(editName.val() + " - " + editType.val())
+  }
+
+  if(editDescription.val()==""){
+    editDescription.val(currentDescription.text());
+  } else {
+    currentDescription.text(editDescription.val())
+  }
+  if (editType.val()!==null) {
+    currentActivity.removeClass();
+    currentActivity.addClass("activity");
+    currentActivity.addClass(editType.val());
+  }
+
+  editName.val('')
+  editDescription.val('')
+  editType.val('Other')
+
+  closeEdit()
+}
+
+
 sortBar.on('click','button', changeTab);
 sortBar.on('click','button', updateList);
+activities.on('click','button', openEdit);
+closeEditButton.on('click', closeEdit);
+deleteButton.on('click', function(){
+  if (confirm("Are you sure you want to delete this Activity")){
+    currentActivity.remove();
+    editScreen.css("display","none");
+  }
+})
+editSubmit.on('click', submitEdit);
 
 inputButton.on('click', function (event){
   event.preventDefault();
@@ -138,8 +196,39 @@ inputButton.on('click', function (event){
   start = $("#input-start-hour").val() +":"+ $("#input-start-minute").val() +" "+ $("#input-start-ampm").val();
   end = $("#input-end-hour").val() +":"+ $("#input-end-minute").val() +" "+ $("#input-end-ampm").val();
 
+  if (activity===''){
+    activity = "Unnamed"
+  }
+  if (start.includes("null")){
+    start = "Unknown"
+  }
+  if (end.includes("null")){
+    end = "Unknown"
+  }
+  if (type===null){
+    type = 'Other'
+  }
+
+  military = ''
+
+  if ($("#input-start-ampm").val()=="am"){
+    if($("#input-start-hour").val()=="12"){
+      military = -1200
+    } else{
+      military = 0
+    }
+  } else {
+    if ($("#input-start-hour").val()=="12"){
+      military = 0
+    } else{
+        military = 1200
+    }
+  }
+
+  level = parseInt($("#input-start-hour").val())*100 + parseInt(($("#input-start-minute").val())) + military;
+
   $("#input-name").val("");
-  $("#input-type").val("");
+  $("#input-type").val("Other");
   $("#input-start-hour").val("")
   $("#input-start-minute").val("");
   $("#input-start-ampm").val("");
@@ -147,13 +236,13 @@ inputButton.on('click', function (event){
   $("#input-end-minute").val("");
   $("#input-end-ampm").val("");
 
-  var newInput = $("<div>", { class: "activity "+type});
+  var newInput = $("<div>", { class: "activity "+type, value:level});
   var newTime = $("<div>", {class:"timeLength"});
   var newTimeStart = $("<p>", {class:"start"});
   var newTimeEnd = $("<p>", {class:"end"});
-  var newText = $("<div>", { class:"title"});
-  var newTitle = $("<h2>");
-  var newDesc = $("<p>");
+  var newText = $("<div>", { class:"activityText"});
+  var newTitle = $("<h2>", { class:"activityTitle"});
+  var newDesc = $("<p>", { class:"activityDescription"});
   var buttonEdit = $("<button>", {class:"edit"});
   var buttonEditImg = $("<img>", {src:"assets/images/edit.png"});
   var newLabel = $("<label>", {class:"container"});
@@ -182,6 +271,8 @@ inputButton.on('click', function (event){
   newInput.append(newText);
   newInput.append(buttonEdit);
   newInput.append(newLabel);
+
+  
 
   activities.prepend(newInput);
 });

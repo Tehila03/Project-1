@@ -3,11 +3,44 @@
 
 <head>
     <title>Mindful Mapping</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="icon" href="assets/images/Logo.png" type="image/icon type">
 </head>
 
 <body>
+    <div id="editScreen">
+        <div id="editContent" class="message is-info">
+            <h1 id="editHeader" class="message-header">Make Some Changes<button class="delete is-large" id="closeEdit"></button>
+            </h1>
+            <form id="edit-form" class="box">
+                <div class="field">
+                    <label for="edit-input-name" class="label">Activity</label>
+                    <input type="text" id="edit-input-name" class="control" placeholder="New Title"><br>
+                </div>
+                <div class="field">
+                    <label for="edit-input-type" class="label">Type</label>
+                    <select id="edit-input-type" class="control">
+                        <option value="Other" disabled selected>Select a type...</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Exercise">Exercise</option>
+                        <option value="Social">Social</option>
+                        <option value="Other">Other</option>
+                    </select> 
+                </div>
+                <div class="field">
+                    <label for="edit-input-description" class="label">Extra Details</label>
+                    <input type="text" id="edit-input-description" class="control" placeholder="New Description"><br>
+                </div>
+                <button class="button is-primary" id="editSubmit">
+                    Submit
+                  </button>
+            </form>
+            <button class="button is-danger" id="deleteActivity">Delete Activity</button>
+        </div>
+    </div>
     <header id="headTop">
         <div id="logoTitle">
             <img id="logo" src="assets/images/Logo.png">
@@ -179,14 +212,14 @@
             </nav>
             <div id="workflow">
                 <div id="timeslots">
-                    <div class="activity Exercise">
+                    <div class="activity Exercise" value="600">
                         <div class="timeLength">
                             <p class="start">6:00 am</p>
                             <p class="end">7:00 am</p>
                         </div>
-                        <div class="title">
-                            <h2>Morning Run - Exercise</h2>
-                            <p></p>
+                        <div class="activityText">
+                            <h2 class="activityTitle">Morning Run - Exercise</h2>
+                            <p class="activityDescription"></p>
                         </div>
                         <button class="edit">
                             <img src="assets/images/edit.png">
@@ -196,13 +229,14 @@
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <div class="activity Other">
+                    <div class="activity Other" value="715">
                         <div class="timeLength">
                             <p class="start">7:15 am</p>
                             <p class="end">7:45 am</p>
-                        </div><div class="title">
-                            <h2>Light reading with Coffee - Other</h2>
-                            <p></p>
+                        </div>
+                        <div class="activityText">
+                            <h2 class="activityTitle"> Light reading with Coffee - Other</h2>
+                            <p class="activityDescription"></p>
                         </div>
                         <button class="edit">
                             <img src="assets/images/edit.png">
@@ -212,14 +246,14 @@
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <div class="activity Social">
+                    <div class="activity Social" value="800">
                         <div class="timeLength">
                             <p class="start">8:00 am</p>
                             <p class="end">9:00 am</p>
                         </div>
-                        <div class="title">
-                            <h2>Breakfast with Roommate - Social</h2>
-                            <p></p>
+                        <div class="activityText">
+                            <h2 class="activityTitle">Breakfast with Roommate - Social</h2>
+                            <p class="activityDescription"></p>
                         </div>
                         <button class="edit">
                             <img src="assets/images/edit.png">
@@ -229,14 +263,14 @@
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <div class="activity Work">
+                    <div class="activity Work" value="930">
                         <div class="timeLength">
                             <p class="start">9:30 am</p>
                             <p class="end">5:00 pm</p>
                         </div>
-                        <div class="title">
-                            <h2>Shift at Bookstore - Work</h2>
-                            <p></p>
+                        <div class="activityText">
+                            <h2 class="activityTitle">Shift at Bookstore - Work</h2>
+                            <p class="activityDescription"></p>
                         </div>
                         <button class="edit">
                             <img src="assets/images/edit.png">
@@ -246,14 +280,14 @@
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <div class="activity Exercise">
+                    <div class="activity Exercise" value="515">
                         <div class="timeLength">
                             <p class="start">5:15 pm</p>
                             <p class="end">7:00 pm</p>
                         </div>
-                        <div class="title">
-                            <h2>Weight Lifting (Legs) - Exercise</h2>
-                            <p></p>
+                        <div class="activityText">
+                            <h2 class="activityTitle">Weight Lifting (Legs) - Exercise</h2>
+                            <p class="activityDescription"></p>
                         </div>
                         <button class="edit">
                             <img src="assets/images/edit.png">
@@ -263,14 +297,14 @@
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <div class="activity Social">
+                    <div class="activity Social" value="730">
                         <div class="timeLength">
                             <p class="start">7:30 pm</p>
                             <p class="end">8:30 pm</p>
                         </div>
-                        <div class="title">
-                            <h2>Dinner with John - Social</h2>
-                            <p></p>
+                        <div class="activityText">
+                            <h2 class="activityTitle">Dinner with John - Social</h2>
+                            <p class="activityDescription"></p>
                         </div>
                         <button class="edit">
                             <img src="assets/images/edit.png">
@@ -280,14 +314,14 @@
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <div class="activity School">
+                    <div class="activity School" value="845">
                         <div class="timeLength">
                             <p class="start">8:45 pm</p>
                             <p class="end">9:30 pm</p>
                         </div>
-                        <div class="title">
-                            <h2>Coding Activities - School</h2>
-                            <p></p>
+                        <div class="activityText">
+                            <h2 class="activityTitle">Coding Activities - School</h2>
+                            <p class="activityDescription"></p>
                         </div>
                         <button class="edit">
                             <img src="assets/images/edit.png">
@@ -297,14 +331,14 @@
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <div class="activity Other">
+                    <div class="activity Other" value="930">
                         <div class="timeLength">
                             <p class="start">9:30 pm</p>
                             <p class="end">10:00 pm</p>
                         </div>
-                        <div class="title">
-                            <h2>Meditation - Other</h2>
-                            <p></p>
+                        <div class="activityText">
+                            <h2 class="activityTitle">Meditation - Other</h2>
+                            <p class="activityDescription"></p>
                         </div>
                         <button class="edit">
                             <img src="assets/images/edit.png">
