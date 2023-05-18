@@ -26,7 +26,7 @@ if (currentQuote === null ){
     currentQuote = 0;
 }
 
-if (newDate != dayjs().date()+1) {
+if (newDate != dayjs().date()) {
   newDate = dayjs().date();
   currentQuote++;
   localStorage.setItem("newDate", newDate);
