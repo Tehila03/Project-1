@@ -272,7 +272,18 @@ inputButton.on('click', function (event){
   newInput.append(buttonEdit);
   newInput.append(newLabel);
 
-  
+  var activityList = $(".activity");
 
-  activities.prepend(newInput);
+  for (var i = 0;i<activityList.length;i++){
+    console.log(level)
+    console.log(activityList[i].getAttribute("value"))
+    console.log(activities.children()[i])
+    if (parseInt(level)<parseInt(activityList[i].getAttribute("value"))){
+      newInput.insertBefore(activityList[i])
+      break
+    }
+    if (i===activityList.length-1){
+      newInput.insertBefore($(".spacer"));
+    }
+  }
 });
