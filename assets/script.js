@@ -9,6 +9,9 @@ var editName = $("#edit-input-name");
 var editDescription = $("#edit-input-description");
 var editType = $("#edit-input-type");
 var editSubmit = $("#editSubmit");
+var deleteScreen = $("#confirmDelete");
+var confirmDelete = $("#yes");
+var denyDelete = $("#no")
 
 function getApi(requestUrl) {
   fetch(requestUrl)
@@ -144,6 +147,10 @@ function closeEdit(){
   editScreen.css("display","none")
 }
 
+function openDelete(){
+  deleteScreen.css("display","block");
+}
+
 var currentActivity = "";
 var currentTitle = "";
 var currentDescription = "";
@@ -180,11 +187,14 @@ sortBar.on('click','button', changeTab);
 sortBar.on('click','button', updateList);
 activities.on('click','button', openEdit);
 closeEditButton.on('click', closeEdit);
-deleteButton.on('click', function(){
-  if (confirm("Are you sure you want to delete this Activity")){
-    currentActivity.remove();
-    editScreen.css("display","none");
-  }
+deleteButton.on('click', openDelete);
+confirmDelete.on('click',function(){
+  currentActivity.remove();
+  deleteScreen.css("display","none");
+  editScreen.css("display","none");
+})
+denyDelete.on('click',function(){
+  deleteScreen.css("display","none");
 })
 editSubmit.on('click', submitEdit);
 
